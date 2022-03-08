@@ -25,4 +25,9 @@ public class Account {
     public String toString() {
         return owner + " balance: " + balance;
     }
+
+    public static void transfer(Account from, Account to, double howMuch) {
+        from.withdrawal(howMuch);
+        to.deposit(howMuch);
+    }
 }

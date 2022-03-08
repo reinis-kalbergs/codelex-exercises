@@ -8,11 +8,30 @@ public class BankAccount {
     public double balance;
 
     public final void deposit(double amount) {
-        //todo
+        this.balance += amount;
     }
 
     public final void withdraw(double amount) {
-        //todo
+        this.balance -= amount;
     }
 
+    @Override
+    public String toString() {
+        if (this.balance >= 0) {
+            return name + ", $" + String.format("%.02f", balance);
+        } else {
+            return name + ", -$" + String.format("%.02f", balance * (-1));
+        }
+
+    }
+
+    public BankAccount(String name, double balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    public BankAccount(String name) {
+        this.name = name;
+        this.balance = 0;
+    }
 }
