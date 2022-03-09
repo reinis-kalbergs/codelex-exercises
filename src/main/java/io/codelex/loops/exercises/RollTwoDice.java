@@ -9,7 +9,7 @@ public class RollTwoDice {
         Scanner sc = new Scanner(System.in);
         System.out.print("Desired sum: ");
         int desiredSum = sc.nextInt();
-        if (desiredSum>12) {
+        if (desiredSum>12 || desiredSum<2) {
             System.out.println("Cannot get that sum");
         }else{
             System.out.println();
@@ -26,11 +26,5 @@ public class RollTwoDice {
             } while (sum != desiredSum);
         }
 
-
-
-
-
     }
-
-
 }

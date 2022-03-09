@@ -19,6 +19,5 @@ public class PrintDayInWord {
             case 6 -> System.out.println("Saturday");
             default -> System.out.println("Not a valid day");
         }
-
     }
 }

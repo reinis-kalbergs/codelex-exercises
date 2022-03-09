@@ -10,21 +10,15 @@ public class NumberSquare {
         System.out.println("Max?");
         int max = sc.nextInt();
 
-
         for (int i = min; i <= max; i++) {
-
             for (int j = i; j <= max; j++) {
                 System.out.print(j);
             }
-
             for (int k = min; k < i; k++) {
                 System.out.print(k);
             }
-
             System.out.println();
-
         }
-
 
     }
 }

@@ -20,13 +20,10 @@ public class FizzBuzz {
             } else {
                 System.out.print(i + " ");
             }
-
-
             if (i % 20 == 0) {
                 System.out.println();
             }
+
         }
-
-
     }
 }
