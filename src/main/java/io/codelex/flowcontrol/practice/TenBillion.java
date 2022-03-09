@@ -9,17 +9,16 @@ public class TenBillion {
         Scanner in = new Scanner(System.in);
         System.out.print("Input an integer number less than ten billion: ");
 
-        long n = in.nextLong();
-
         //todo - check if Long
-        if (n == (long) n) {
+        if (in.hasNextLong()) {
+            long n = in.nextLong();
             //todo - check if n is less than zero
-            if (n<0){
+            if (n < 0) {
                 n *= -1;
             }
-            if (n>=10000000000L){
+            if (n >= 10000000000L) {
                 System.out.println("Number is greater or equals 10,000,000,000!");
-            } else{
+            } else {
                 int digits = Long.toString(n).length();
                 System.out.println("Number of digits in the number: " + digits);
             }

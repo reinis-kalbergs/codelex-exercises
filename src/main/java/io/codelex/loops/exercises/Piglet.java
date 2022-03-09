@@ -7,7 +7,6 @@ public class Piglet {
 
     static Scanner sc = new Scanner(System.in);
 
-
     public static void main(String[] args) {
 
         System.out.println("Welcome to Piglet!");
@@ -30,25 +29,20 @@ public class Piglet {
             }
         }
         System.out.println("You got " + points + " points.");
-
     }
 
-    public static boolean readBoolean() {
-
+    private static boolean readBoolean() {
         while (true) {
-            String choice = sc.nextLine();
+            String choice = sc.nextLine().toLowerCase();
             if (choice.equals("y")) {
-
                 return true;
             } else if (choice.equals("n")) {
-
                 return false;
             } else {
                 System.out.println("Invalid choice. Write 'y' or 'n'. Roll again?");
-                choice = sc.nextLine();
             }
         }
-
     }
+
 }
 
