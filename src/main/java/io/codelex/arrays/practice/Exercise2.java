@@ -18,12 +18,10 @@ public class Exercise2 {
         int[] myArray = new int[maxNumber - minNumber + 1];
         int sum = 0;
 
-
         for (int i = 0; i < myArray.length; i++) {
             myArray[i] = minNumber + i;
             sum += myArray[i];
         }
-
 
         System.out.println("The sum is " + sum);
     }

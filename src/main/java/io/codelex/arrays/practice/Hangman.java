@@ -7,9 +7,10 @@ public class Hangman {
 
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        String[] possibleWords = {"something", "test", "more", "last", "possibly", "again", "programming"};
+        final String[] POSSIBLE_WORDS = {"something", "test", "more", "last", "possibly", "again", "programming"};
+        final int ALLOWED_CHANCES = 5;
         Random r = new Random();
-        String word = possibleWords[r.nextInt(possibleWords.length)];
+        String word = POSSIBLE_WORDS[r.nextInt(POSSIBLE_WORDS.length)];
         char[] hiddenWord = word.toCharArray();
         String guess;
         for (int i = 0; i < word.length(); i++) {
@@ -17,7 +18,7 @@ public class Hangman {
         }
         StringBuilder misses = new StringBuilder();
 
-        while (misses.length() < 5) {
+        while (misses.length() < ALLOWED_CHANCES) {
 
             System.out.println("----------------------");
             System.out.print("Word:   ");
@@ -37,7 +38,7 @@ public class Hangman {
                 break;
             }
         }
-        if (misses.length() == 5) {
+        if (misses.length() == ALLOWED_CHANCES) {
             System.out.println("Sorry, you lost! The word was: " + word);
         }
 
