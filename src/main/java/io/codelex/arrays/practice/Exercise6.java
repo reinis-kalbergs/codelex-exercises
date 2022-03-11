@@ -8,10 +8,10 @@ public class Exercise6 {
         int[] myArray1 = new int[10];
 
         for (int i = 0; i < 10; i++) {
-            myArray1[i] = r.nextInt(100)+1;
+            myArray1[i] = r.nextInt(100) + 1;
         }
         int[] myArray2 = myArray1.clone();// vai  System.arraycopy()
-        myArray1[9] = -7;
+        myArray1[myArray1.length - 1] = -7;
         System.out.println("Array 1: " + printOut1DArray(myArray1));
         System.out.println("Array 2: " + printOut1DArray(myArray2));
     }

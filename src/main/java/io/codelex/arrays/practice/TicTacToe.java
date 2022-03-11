@@ -15,18 +15,16 @@ public class TicTacToe {
             System.out.println("'" + playerTurn() + "' choose your location (row, column):");
             makeMove(keyboard);
             displayBoard();
-            if (aWin()){
+            if (aWin()) {
                 break;
-            }else if(aTie()){
+            } else if (aTie()) {
                 break;
             }
         }
-
-
     }
 
     public static void makeMove(Scanner sc) {
-        String[] inArr=sc.nextLine().split(" ");
+        String[] inArr = sc.nextLine().split(" ");
         int rChoice = Integer.parseInt(inArr[0]);
         int cChoice = Integer.parseInt(inArr[1]);
 
@@ -35,7 +33,6 @@ public class TicTacToe {
             makeMove(sc);
         } else {
             board[rChoice][cChoice] = playerTurn();
-
         }
     }
 
@@ -52,7 +49,6 @@ public class TicTacToe {
         } else {
             return 'O';
         }
-
     }
 
     public static boolean aTie() {
@@ -69,7 +65,6 @@ public class TicTacToe {
         } else {
             return false;
         }
-
     }
 
     public static boolean aWin() {

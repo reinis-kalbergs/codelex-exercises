@@ -32,7 +32,7 @@ public class Exercise1 {
 
     }
 
-    public static String printOut1DArray(String[] arr) {
+    private static String printOut1DArray(String[] arr) {
         StringBuilder res = new StringBuilder();
         for (String a : arr) {
             res.append(a).append(" , ");
@@ -40,7 +40,7 @@ public class Exercise1 {
         return res.substring(0, res.length() - 3);
     }
 
-    public static String printOut1DArray(int[] arr) {
+    private static String printOut1DArray(int[] arr) {
         StringBuilder res = new StringBuilder();
         for (int a : arr) {
             res.append(a).append(" , ");
