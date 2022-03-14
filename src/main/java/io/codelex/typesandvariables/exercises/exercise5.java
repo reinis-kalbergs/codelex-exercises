@@ -24,14 +24,14 @@ public class exercise5 {
 
 
         System.out.println("+------------------------------------------------+");
-        System.out.println("| 1 |"+textWithSpaces(course1,26)+" | "+textWithSpaces(teacher1,16)+" |");
-        System.out.println("| 2 |"+textWithSpaces(course2,26)+" | "+textWithSpaces(teacher2,16)+" |");
-        System.out.println("| 3 |"+textWithSpaces(course3,26)+" | "+textWithSpaces(teacher3,16)+" |");
-        System.out.println("| 4 |"+textWithSpaces(course4,26)+" | "+textWithSpaces(teacher4,16)+" |");
-        System.out.println("| 5 |"+textWithSpaces(course5,26)+" | "+textWithSpaces(teacher5,16)+" |");
-        System.out.println("| 6 |"+textWithSpaces(course6,26)+" | "+textWithSpaces(teacher6,16)+" |");
-        System.out.println("| 7 |"+textWithSpaces(course7,26)+" | "+textWithSpaces(teacher7,16)+" |");
-        System.out.println("| 8 |"+textWithSpaces(course8,26)+" | "+textWithSpaces(teacher8,16)+" |");
+        System.out.println("| 1 |" + textWithSpaces(course1, 26) + " | " + textWithSpaces(teacher1, 16) + " |");
+        System.out.println("| 2 |" + textWithSpaces(course2, 26) + " | " + textWithSpaces(teacher2, 16) + " |");
+        System.out.println("| 3 |" + textWithSpaces(course3, 26) + " | " + textWithSpaces(teacher3, 16) + " |");
+        System.out.println("| 4 |" + textWithSpaces(course4, 26) + " | " + textWithSpaces(teacher4, 16) + " |");
+        System.out.println("| 5 |" + textWithSpaces(course5, 26) + " | " + textWithSpaces(teacher5, 16) + " |");
+        System.out.println("| 6 |" + textWithSpaces(course6, 26) + " | " + textWithSpaces(teacher6, 16) + " |");
+        System.out.println("| 7 |" + textWithSpaces(course7, 26) + " | " + textWithSpaces(teacher7, 16) + " |");
+        System.out.println("| 8 |" + textWithSpaces(course8, 26) + " | " + textWithSpaces(teacher8, 16) + " |");
         System.out.println("+------------------------------------------------+");
 
     }
