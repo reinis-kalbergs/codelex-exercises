@@ -9,8 +9,8 @@ public class DatePeriodTest {
         LocalDate firstEnd = LocalDate.of(2022, 1, 15);
         DatePeriod firstPeriod = new DatePeriod(firstStart, firstEnd);
 
-        LocalDate secondStart = LocalDate.of(2022, 1, 20);
-        LocalDate secondEnd = LocalDate.of(2022, 1, 15);
+        LocalDate secondStart = LocalDate.of(2022, 1, 10);
+        LocalDate secondEnd = LocalDate.of(2022, 1, 25);
         DatePeriod secondPeriod = new DatePeriod(secondStart, secondEnd);
 
         DatePeriod overlap = firstPeriod.intersection(secondPeriod);
@@ -19,8 +19,6 @@ public class DatePeriodTest {
         } else {
             System.out.println("The dare periods do not overlap");
         }
-//overlap variable should have start date 10.01.2022 and end date 15.01.2022
 
     }
-
 }
