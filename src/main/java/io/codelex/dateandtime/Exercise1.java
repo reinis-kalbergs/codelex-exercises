@@ -6,14 +6,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Exercise1 {
-
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
         System.out.println("Enter the first date (dd.mm.yyyy):");
         String input = sc.nextLine();
-        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         LocalDate date1 = LocalDate.parse(input, dateFormat);
+
         System.out.println("Enter the second date (dd.mm.yyyy):");
         input = sc.nextLine();
         LocalDate date2 = LocalDate.parse(input, dateFormat);
@@ -32,12 +33,6 @@ public class Exercise1 {
         }
         System.out.println("Employee worked " + hoursWorked + " hours");
 
-    }
-
-    private void dateSwitch(LocalDate date1, LocalDate date2) {
-        LocalDate tempDate = date2;
-        date2 = date1;
-        date1 = tempDate;
     }
 }
 
