@@ -1,6 +1,7 @@
 package io.codelex.oop.shapes;
 
 public abstract class Shape {
+    //exercise 1 and 9
     private final int numSides;
 
     public Shape(int numSides) {
