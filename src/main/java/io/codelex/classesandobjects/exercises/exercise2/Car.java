@@ -10,7 +10,7 @@ public class Car {
     }
 
     public double calculateConsumption() {
-        return liters/(endKilometers - startKilometers)*100;
+        return liters / (endKilometers - startKilometers) * 100;
     }//liters per 100km
 
     public void filUp(double mileage, double liters) {
@@ -19,10 +19,12 @@ public class Car {
     }
 
     public boolean gasHog() {
-        return calculateConsumption() > 15;
+        int GAS_HOG_CONSUMPTION = 15;
+        return calculateConsumption() > GAS_HOG_CONSUMPTION;
     }
 
     public boolean economyCar() {
-        return calculateConsumption() < 5;
+        int ECONOMY_CAR_CONSUMPTION = 5;
+        return calculateConsumption() < ECONOMY_CAR_CONSUMPTION;
     }
 }

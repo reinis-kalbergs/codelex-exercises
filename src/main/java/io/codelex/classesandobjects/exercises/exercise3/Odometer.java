@@ -3,6 +3,14 @@ package io.codelex.classesandobjects.exercises.exercise3;
 public class Odometer {
     private int mileage;
 
+    public Odometer(int mileage) {
+        this.mileage = mileage;
+    }
+
+    public Odometer() {
+        this(0);
+    }
+
     public int getMileage() {
         return mileage;
     }
@@ -14,18 +22,13 @@ public class Odometer {
     }
 
     public void odometerIncrement() {
-        if (mileage == 999999) {
+        int MAX_ODOMETER_VALUE = 999999;
+        if (mileage == MAX_ODOMETER_VALUE) {
             mileage = 0;
         } else {
             mileage++;
         }
     }
-
-    public Odometer(int mileage) {
-        this.mileage = mileage;
-    }
-
-    public Odometer() {this(0);}
 
     public void driveFor(FuelGauge curFuelGauge, int kmDriven) {
 

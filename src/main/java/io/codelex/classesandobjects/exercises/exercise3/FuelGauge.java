@@ -2,6 +2,7 @@ package io.codelex.classesandobjects.exercises.exercise3;
 
 public class FuelGauge {
     private int currentFuelAmount;
+    private final int MAX_FUEL_GAUGE = 70;
 
     public int getCurrentFuelAmount() {
         return currentFuelAmount;
@@ -12,7 +13,6 @@ public class FuelGauge {
     }
 
     public FuelGauge() {
-        this(0);
     }
 
     @Override
@@ -21,10 +21,12 @@ public class FuelGauge {
     }
 
     public void fillUp() {
-        if (currentFuelAmount < 70)
+        if (currentFuelAmount < MAX_FUEL_GAUGE) {
             this.currentFuelAmount++;
-        if (this.isFull())
+        }
+        if (this.isFull()) {
             System.out.println("The fuel tank is full.");
+        }
 
     }
 
@@ -34,7 +36,7 @@ public class FuelGauge {
     }
 
     public boolean isFull() {
-        return currentFuelAmount == 70;
+        return currentFuelAmount == MAX_FUEL_GAUGE;
     }
 
     public boolean isEmpty() {
