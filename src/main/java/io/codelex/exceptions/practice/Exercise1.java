@@ -2,7 +2,7 @@ package io.codelex.exceptions.practice;
 
 import java.util.Scanner;
 
-public class Exercises1 {
+public class Exercise1 {
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
 
