@@ -1,6 +1,7 @@
 package io.codelex.classesandobjects.exercises.exercise7;
 
-import static io.codelex.classesandobjects.exercises.exercise7.Dog.gender.*;
+import static io.codelex.classesandobjects.exercises.exercise7.Dog.Gender.FEMALE;
+import static io.codelex.classesandobjects.exercises.exercise7.Dog.Gender.MALE;
 
 public class DogTest {
     public static void main(String[] args) {

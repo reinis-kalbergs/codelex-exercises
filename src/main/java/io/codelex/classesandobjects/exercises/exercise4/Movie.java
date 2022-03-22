@@ -1,5 +1,7 @@
 package io.codelex.classesandobjects.exercises.exercise4;
 
+import java.util.Arrays;
+
 public class Movie {
     private String title;
     private String studio;
@@ -32,18 +34,14 @@ public class Movie {
 
     public Movie[] getPG(Movie[] films) {
         int count = 0;
-        for (Movie movie : films) {
-            if (movie.getRating().equals("PG"))
-                count++;
-        }
-        Movie[] result = new Movie[count];
+        Movie[] filmsPG = new Movie[films.length];
         for (Movie movie : films) {
             if (movie.getRating().equals("PG")) {
-                count--;
-                result[count] = movie;
+                filmsPG[count] = movie;
+                count++;
             }
         }
-        return result;
+        return Arrays.copyOfRange(filmsPG, 0, count);
     }
 
 }

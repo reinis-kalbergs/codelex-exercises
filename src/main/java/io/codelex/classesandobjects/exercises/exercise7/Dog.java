@@ -1,12 +1,13 @@
 package io.codelex.classesandobjects.exercises.exercise7;
 
 public class Dog {
-    public enum gender{
+    public enum Gender {
         MALE,
         FEMALE
     }
+
     private String name;
-    private gender sex;
+    private Gender sex;
     private Dog father;
     private Dog mother;
 
@@ -26,11 +27,11 @@ public class Dog {
         this.name = name;
     }
 
-    public gender getSex() {
+    public Gender getSex() {
         return sex;
     }
 
-    public void setSex(gender sex) {
+    public void setSex(Gender sex) {
         this.sex = sex;
     }
 
@@ -41,7 +42,7 @@ public class Dog {
         return this.father.getName();
     }
 
-    public Dog(String name, gender sex) {
+    public Dog(String name, Gender sex) {
         this.name = name;
         this.sex = sex;
     }
@@ -68,7 +69,9 @@ public class Dog {
     }
 
     public boolean hasSameMotherAs(Dog possibleSibling) {
-        if (this.mother == null || possibleSibling.getMother() == null) return false; // No mothers found.
+        if (this.mother == null || possibleSibling.getMother() == null) {
+            return false;
+        } // No mothers found.
         return (this.mother.equals(possibleSibling.getMother()));
     }
 }
