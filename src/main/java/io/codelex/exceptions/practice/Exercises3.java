@@ -1,11 +1,13 @@
 package io.codelex.exceptions.practice;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
 public class Exercises3 {
     public static void cat(File file) {
-        /*
-        TODO - fix this method so it compiles
+
+        //fix this method so it compiles
         RandomAccessFile input = null;
         String line = null;
 
@@ -14,12 +16,10 @@ public class Exercises3 {
             while ((line = input.readLine()) != null) {
                 System.out.println(line);
             }
-            return;
-        } finally {
-            if (input != null) {
-                input.close();
-            }
+            input.close();
+        } catch (IOException e) {
+            System.out.println("No such file found");
         }
-        */
+        
     }
 }
