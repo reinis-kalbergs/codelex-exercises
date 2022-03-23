@@ -7,11 +7,22 @@ public class Exercise1 {
         final Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Enter the numerator");
-            int numerator = scanner.nextInt();
-            System.out.println("Enter the divisor");
-            int divisor = scanner.nextInt();
-            System.out.println(numerator + " / " + divisor + " = " + numerator / divisor);
+            try {
+                System.out.println("Enter the numerator");
+                String numeratorString = scanner.next();
+                if (numeratorString.substring(0, 1).equalsIgnoreCase("q")) {
+                    break;
+                }
+                int numerator = Integer.parseInt(numeratorString);
+                System.out.println("Enter the divisor");
+                int divisor = scanner.nextInt();
+                System.out.println(numerator + " / " + divisor + " = " + numerator / divisor + "\n");
+            } catch (RuntimeException e) {
+                if (scanner.hasNextLine()) {
+                    scanner.nextLine();
+                }
+                System.out.println("You entered bad data.\n Please try again.\n");
+            }
         }
     }
 }
