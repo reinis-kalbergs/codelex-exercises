@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Exercise1 {
     public static void main(String[] args) {
 
+        final int HOURS_WORKED_IN_DAY = 8;
         Scanner sc = new Scanner(System.in);
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
@@ -26,13 +27,17 @@ public class Exercise1 {
         }
         int hoursWorked = 0;
         while (!date1.isAfter(date2)) {
-            if (!(date1.getDayOfWeek() == DayOfWeek.SATURDAY || date1.getDayOfWeek() == DayOfWeek.SUNDAY)) {
-                hoursWorked += 8;
+            if (isWorkday(date1)) {
+                hoursWorked += HOURS_WORKED_IN_DAY;
             }
             date1 = date1.plusDays(1);
         }
         System.out.println("Employee worked " + hoursWorked + " hours");
 
+    }
+
+    private static boolean isWorkday(LocalDate date) {
+        return !(date.getDayOfWeek() == DayOfWeek.SATURDAY || date.getDayOfWeek() == DayOfWeek.SUNDAY);
     }
 }
 
