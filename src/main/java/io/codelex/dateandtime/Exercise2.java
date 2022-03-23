@@ -2,6 +2,8 @@ package io.codelex.dateandtime;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Exercise2 {
@@ -20,24 +22,28 @@ public class Exercise2 {
         int month = sc.nextInt();
         sc.nextLine();
 
-        LocalDate[] updateDays = serverUpdateDates(date, year, month);
-
-        System.out.println(updateDays[0]);
-        System.out.println(updateDays[1]);
+        List<LocalDate> updateDays = serverUpdateDates(date, year, month);
+        System.out.println("Server update days:");
+        for (LocalDate localDate : updateDays) {
+            System.out.println(localDate);
+        }
     }
 
-    private static LocalDate[] serverUpdateDates(LocalDate date, int year, int month) {
+    private static List<LocalDate> serverUpdateDates(LocalDate date, int year, int month) {
+        final int DAYS_BETWEEN_SERVER_UPDATE = 5;
         int endMonth = month + 1;
-        if (endMonth == 13) endMonth = 1;
+        if (endMonth == 13) {
+            endMonth = 1;
+        }
         int endYear = year;
-        if (endMonth == 1) endYear++;
-        int count = 0;
-        LocalDate[] updateDays = new LocalDate[2];
+        if (endMonth == 1) {
+            endYear++;
+        }
+        List<LocalDate> updateDays = new ArrayList<>();
         while (!(date.getMonthValue() == endMonth && date.getYear() == endYear)) {
-            date = date.plusDays(14);
+            date = date.plusDays(DAYS_BETWEEN_SERVER_UPDATE);
             if (date.getYear() == year && date.getMonthValue() == month) {
-                updateDays[count] = date;
-                count++;
+                updateDays.add(date);
             }
         }
         return updateDays;

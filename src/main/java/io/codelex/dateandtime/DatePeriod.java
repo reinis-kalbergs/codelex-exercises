@@ -33,19 +33,18 @@ public class DatePeriod {
     }
 
     public DatePeriod intersection(DatePeriod secondPeriod) {
-        DatePeriod result = null;
         if (doTheyOverlap(secondPeriod)) {
             if (this.isInside(secondPeriod)) {
-                result = new DatePeriod(this.startDate, this.endDate);
+                return new DatePeriod(this.startDate, this.endDate);
             } else if (secondPeriod.isInside(this)) {
-                result = new DatePeriod(secondPeriod.getStartDate(), secondPeriod.getEndDate());
+                return new DatePeriod(secondPeriod.getStartDate(), secondPeriod.getEndDate());
             } else if (this.startDate.isBefore(secondPeriod.getStartDate())) {
-                result = new DatePeriod(secondPeriod.getStartDate(), this.endDate);
+                return new DatePeriod(secondPeriod.getStartDate(), this.endDate);
             } else if (secondPeriod.getStartDate().isBefore(this.startDate)) {
-                result = new DatePeriod(this.startDate, secondPeriod.getEndDate());
+                return new DatePeriod(this.startDate, secondPeriod.getEndDate());
             }
         }
-        return result;
+        return null;
     }
 
     private boolean doTheyOverlap(DatePeriod secondPeriod) {
@@ -53,8 +52,8 @@ public class DatePeriod {
     }
 
     private boolean isInside(DatePeriod secondPeriod) {
-        return (this.startDate.isAfter(secondPeriod.getStartDate()) || this.startDate.isEqual(secondPeriod.getStartDate())) &&
-                (this.endDate.isBefore(secondPeriod.getEndDate()) || this.endDate.isEqual(secondPeriod.getEndDate()));
+        return (this.startDate.isAfter(secondPeriod.getStartDate()) || this.startDate.isEqual(secondPeriod.getStartDate()))
+                && (this.endDate.isBefore(secondPeriod.getEndDate()) || this.endDate.isEqual(secondPeriod.getEndDate()));
     }
 
 }
