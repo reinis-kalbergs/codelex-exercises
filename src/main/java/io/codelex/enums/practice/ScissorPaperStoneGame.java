@@ -11,13 +11,14 @@ public class ScissorPaperStoneGame {
         int aiWins = 0;
         Random rnd = new Random();
         Scanner sc = new Scanner(System.in);
+        final String[] ALL_AI_CHOICES = {"SCISSOR", "PAPER", "STONE"};
 
         System.out.println("Scissor-Paper-Stone");
-        String choice = getInput(sc).toLowerCase();
+        String choice = getInput(sc);
 
-        while (!choice.equals("q")) {
-            ScissorPaperStone playerMove = ScissorPaperStone.playerChoiceToEnum(choice);
-            ScissorPaperStone aiMove = ScissorPaperStone.aiChoiceToEnum(rnd.nextInt(ScissorPaperStone.values().length) + 1);
+        while (!choice.equals("Q")) {
+            ScissorPaperStone playerMove = ScissorPaperStone.valueOf(choice);
+            ScissorPaperStone aiMove = ScissorPaperStone.valueOf(ALL_AI_CHOICES[rnd.nextInt(3)]);
             System.out.println("   My turn: " + aiMove);
             if (isTie(playerMove, aiMove)) {
                 System.out.println("   Tie!");
@@ -40,25 +41,25 @@ public class ScissorPaperStoneGame {
         }
     }
 
-    public static String getInput(Scanner sc) {
+    private static String getInput(Scanner sc) {
         String choice;
         while (true) {
-            System.out.print("Your turn (Enter s for scissor, p for paper, t for stone, q to quit): ");
+            System.out.print("Your turn (Enter 'scissor', 'paper', 'stone', 'q' to quit): ");
             choice = sc.nextLine().toLowerCase();
-            if (choice.equals("s") || choice.equals("p") || choice.equals("t") || choice.equals("q")) {
+            if (choice.equalsIgnoreCase("scissor") || choice.equalsIgnoreCase("paper") || choice.equalsIgnoreCase("stone") || choice.equalsIgnoreCase("q")) {
                 break;
             } else {
                 System.out.println("Invalid input, try again...");
             }
         }
-        return choice;
+        return choice.toUpperCase();
     }
 
-    public static boolean isTie(ScissorPaperStone player, ScissorPaperStone ai) {
+    private static boolean isTie(ScissorPaperStone player, ScissorPaperStone ai) {
         return (player == ai);
     }
 
-    public static boolean doesAIWin(ScissorPaperStone p1, ScissorPaperStone p2) {
+    private static boolean doesAIWin(ScissorPaperStone p1, ScissorPaperStone p2) {
         boolean iaAWin = false;
         if (p1 == ScissorPaperStone.SCISSOR && p2 == ScissorPaperStone.PAPER) {
             iaAWin = true;
