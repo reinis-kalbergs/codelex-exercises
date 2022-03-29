@@ -34,7 +34,7 @@ public class CarServiceTest {
 
         System.out.println("===================================");
         System.out.println("Cars made before 1999");
-        System.out.println(carService.getCarsBefore1999());
+        System.out.println(carService.getCarsBeforeXYear(1999));
         System.out.println("Cars with V12 engines");
         System.out.println(carService.getCarsWithXEngine(EngineType.V12));
         System.out.println("Most expensive car");

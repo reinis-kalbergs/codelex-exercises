@@ -22,12 +22,28 @@ public enum Runner {
     }
 
     public static Runner getFitnessLevel(double runTimeInMinutes) {
-        if (runTimeInMinutes <= ADVANCED.getMaximumTime() && runTimeInMinutes >= ADVANCED.getMinimumTime())
+        if (isAdvanced(runTimeInMinutes)) {
             return ADVANCED;
-        if (runTimeInMinutes <= INTERMEDIATE.getMaximumTime() && runTimeInMinutes > INTERMEDIATE.getMinimumTime())
+        }
+        if (isIntermediate(runTimeInMinutes)) {
             return INTERMEDIATE;
-        if (runTimeInMinutes < BEGINNER.getMaximumTime() && runTimeInMinutes > BEGINNER.getMinimumTime())
+        }
+        if (isBeginner(runTimeInMinutes)) {
             return BEGINNER;
+        }
         return null;
     }
+
+    private static boolean isAdvanced(double runTimeInMinutes) {
+        return runTimeInMinutes <= ADVANCED.getMaximumTime() && runTimeInMinutes >= ADVANCED.getMinimumTime();
+    }
+
+    private static boolean isIntermediate(double runTimeInMinutes) {
+        return runTimeInMinutes <= INTERMEDIATE.getMaximumTime() && runTimeInMinutes > INTERMEDIATE.getMinimumTime();
+    }
+
+    private static boolean isBeginner(double runTimeInMinutes) {
+        return runTimeInMinutes < BEGINNER.getMaximumTime() && runTimeInMinutes > BEGINNER.getMinimumTime();
+    }
+
 }

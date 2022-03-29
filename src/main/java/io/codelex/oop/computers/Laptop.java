@@ -22,7 +22,7 @@ public class Laptop extends Computer {
     public String toString() {
         return "Computer{" +
                 "processor='" + getProcessor() + '\'' +
-                ", RAM='" + getRAM() + '\'' +
+                ", RAM='" + getRam() + '\'' +
                 ", graphicsCard='" + getGraphicsCard() + '\'' +
                 ", company='" + getCompany() + '\'' +
                 ", model='" + getModel() + '\'' +
