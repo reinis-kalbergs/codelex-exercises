@@ -59,7 +59,9 @@ public class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return yearOfManufacture == car.yearOfManufacture && Objects.equals(name, car.name) && Objects.equals(model, car.model) && Objects.equals(price, car.price) && Objects.equals(manufacturerList, car.manufacturerList) && engine == car.engine;
+        return yearOfManufacture == car.yearOfManufacture && Objects.equals(name, car.name)
+                && Objects.equals(model, car.model) && Objects.equals(price, car.price)
+                && Objects.equals(manufacturerList, car.manufacturerList) && engine == car.engine;
     }
 
     @Override
@@ -83,5 +85,9 @@ public class Car {
             names.append(manufacturer.getName()).append(", ");
         }
         return " manufacturer list [" + names.substring(0, names.length() - 2) + " ]";
+    }
+
+    public boolean containsManufacturer(Manufacturer manufacturer) {
+        return manufacturerList.contains(manufacturer);
     }
 }

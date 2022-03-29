@@ -20,9 +20,7 @@ public class CarService {
     }
 
     public void removeCar(Car carToRemove) {
-        int count = carsInService.size();
-        carsInService.remove(carToRemove);
-        if (carsInService.size() == count) {
+        if (!carsInService.remove(carToRemove)) {
             System.out.println("No such car found.");
         }
     }
@@ -46,10 +44,10 @@ public class CarService {
         return result;
     }
 
-    public List<Car> getCarsBefore1999() {
+    public List<Car> getCarsBeforeXYear(int year) {
         List<Car> result = new ArrayList<>();
         for (Car car : carsInService) {
-            if (car.getYearOfManufacture() < 1999)
+            if (car.getYearOfManufacture() < year)
                 result.add(car);
         }
         return result;
@@ -119,8 +117,9 @@ public class CarService {
     public List<Car> findManufacturerCars(Manufacturer manufacturer) {
         List<Car> result = new ArrayList<>();
         for (Car car : carsInService) {
-            if (car.getManufacturerList().contains(manufacturer))
+            if (car.containsManufacturer(manufacturer)) {
                 result.add(car);
+            }
         }
         return result;
     }

@@ -13,19 +13,6 @@ public class Manufacturer {
         this.country = country;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Manufacturer that = (Manufacturer) o;
-        return yearOfEstablishment == that.yearOfEstablishment && name.equals(that.name) && country.equals(that.country);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, yearOfEstablishment, country);
-    }
-
     public String getName() {
         return name;
     }
@@ -40,6 +27,19 @@ public class Manufacturer {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Manufacturer that = (Manufacturer) o;
+        return yearOfEstablishment == that.yearOfEstablishment && name.equals(that.name) && country.equals(that.country);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, yearOfEstablishment, country);
     }
 
     @Override
