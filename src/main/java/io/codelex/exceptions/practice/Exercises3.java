@@ -16,10 +16,17 @@ public class Exercises3 {
             while ((line = input.readLine()) != null) {
                 System.out.println(line);
             }
-            input.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println("No such file found");
+        } finally {
+            try {
+                if (input != null) {
+                    input.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        
+
     }
 }
