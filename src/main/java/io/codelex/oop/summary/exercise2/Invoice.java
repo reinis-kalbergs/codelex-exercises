@@ -7,14 +7,17 @@ import java.util.List;
 
 public class Invoice {
 
-    private List<Item> order = new ArrayList<>();
+    private List<SellableThing> order = new ArrayList<>();
     private final int INVOICE_NUMBER;
     private InvoiceStatus invoiceStatus;
     private final BigDecimal VAT = new BigDecimal("0.21");
     private BigDecimal priceWithoutVAT;
     private BigDecimal priceWithVAT;
 
-    public Invoice(Order order, int invoiceNumber) {
+    public Invoice(Order order, int invoiceNumber) throws WrongOrderException {
+        if (order.getOrder().isEmpty() || order.getOrder() == null) {
+            throw new WrongOrderException("Order must not be empty.");
+        }
         this.order = order.getOrder();
         this.INVOICE_NUMBER = invoiceNumber;
         this.invoiceStatus = InvoiceStatus.APPROVED;
@@ -28,8 +31,8 @@ public class Invoice {
 
     private BigDecimal calculateSum() {
         BigDecimal sum = BigDecimal.ZERO;
-        for (Item item : order) {
-            sum = sum.add(item.getPrice());
+        for (SellableThing sellableThing : order) {
+            sum = sum.add(sellableThing.getPrice());
         }
         return sum.setScale(2, RoundingMode.HALF_UP);
     }
