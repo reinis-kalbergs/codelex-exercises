@@ -26,7 +26,7 @@ public class FlightPlanner {
 
         if (!input.equals("q")) {
 
-            while (!input.equals(flightsBooked.get(0)) || flightsBooked.size() == 1) {
+            while (flightIsOngoing(input, flightsBooked)) {
                 System.out.println("Select a location to travel to:");
                 input = getInput(flightsMap.get(input), sc);
                 if (input.equals("q")) {
@@ -73,6 +73,10 @@ public class FlightPlanner {
             }
         }
         return input;
+    }
+
+    private static boolean flightIsOngoing(String input, List<String> flightsBooked) {
+        return flightsBooked.size() == 1 || !input.equals(flightsBooked.get(0));
     }
 
     private static void displayFlightsTaken(List<String> flightsBooked) {
