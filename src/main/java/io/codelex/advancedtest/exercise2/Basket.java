@@ -4,21 +4,22 @@ import java.util.Stack;
 
 public class Basket<T> {
 
-    private Stack<T> basket = new Stack<>();
+    private Stack<T> basket;
 
     public Basket() {
-
+        this.basket = new Stack<>();
     }
 
     public void addToBasket(T item) {
-        if (basket.size() == 10) {
+        final int MAX_BASKET_SIZE = 10;
+        if (basket.size() == MAX_BASKET_SIZE) {
             throw new BasketFullException("Basket is full");
         }
         basket.add(item);
     }
 
     public void removeFromBasket() {
-        if (basket.size() == 0) {
+        if (basket.isEmpty()) {
             throw new BasketEmptyException("Basket is empty!");
         }
         basket.pop();

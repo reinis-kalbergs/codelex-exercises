@@ -11,14 +11,13 @@ public class ScissorPaperStoneGame {
         int aiWins = 0;
         Random rnd = new Random();
         Scanner sc = new Scanner(System.in);
-        final String[] ALL_AI_CHOICES = {"SCISSOR", "PAPER", "STONE"};
 
         System.out.println("Scissor-Paper-Stone");
         String choice = getInput(sc);
 
         while (!choice.equals("Q")) {
             ScissorPaperStone playerMove = ScissorPaperStone.valueOf(choice);
-            ScissorPaperStone aiMove = ScissorPaperStone.valueOf(ALL_AI_CHOICES[rnd.nextInt(3)]);
+            ScissorPaperStone aiMove = ScissorPaperStone.values()[rnd.nextInt(3)];
             System.out.println("   My turn: " + aiMove);
             if (isTie(playerMove, aiMove)) {
                 System.out.println("   Tie!");
